@@ -9,7 +9,8 @@
 
 | Nome          | Usuário do GitHub |
 | Maria Eduarda | mdudocs |
-| Joao Pedroza  | jpedrorosa85-hub
+| Joao Pedroza | jpedrorosa85-hub |
+| Lucas Dias | lucasrrafael |
  
 ## Hoje: dia de planejamento
 
