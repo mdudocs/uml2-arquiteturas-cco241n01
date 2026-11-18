@@ -1,0 +1,9 @@
+{
+  "name": "servico-apresentacao",
+  "version": "1.0.0",
+  "description": "Camada de apresentação do sistema acadêmico (interface web)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
