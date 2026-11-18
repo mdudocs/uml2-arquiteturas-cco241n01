@@ -1,0 +1,13 @@
+{
+  "name": "sistema-academico-3-tier",
+  "version": "1.0.0",
+  "description": "Sistema acadêmico em arquitetura de camadas (3-tier)",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/start.js",
+    "demo": "node scripts/demo.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
