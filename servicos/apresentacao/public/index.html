@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema Acadêmico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sistema Acadêmico</h1>
+    <p>Arquitetura em 3 camadas: apresentação → negócio → dados</p>
+  </header>
+
+  <div id="aviso" role="status" hidden></div>
+
+  <main>
+    <section>
+      <h2>1. Alunos</h2>
+      <form id="form-aluno">
+        <input name="nome" placeholder="Nome" required>
+        <input name="matricula" placeholder="Matrícula" required>
+        <input name="email" type="email" placeholder="E-mail" required>
+        <button>Cadastrar aluno</button>
+      </form>
+      <table>
+        <thead><tr><th>ID</th><th>Nome</th><th>Matrícula</th><th>E-mail</th></tr></thead>
+        <tbody id="lista-alunos"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>2. Disciplinas</h2>
+      <form id="form-disciplina">
+        <input name="codigo" placeholder="Código" required>
+        <input name="nome" placeholder="Nome" required>
+        <input name="professor" placeholder="Professor" required>
+        <input name="vagas" type="number" min="1" placeholder="Vagas" required>
+        <button>Cadastrar disciplina</button>
+      </form>
+      <table>
+        <thead><tr><th>Código</th><th>Nome</th><th>Professor</th><th>Vagas livres</th></tr></thead>
+        <tbody id="lista-disciplinas"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>3. Matrícula</h2>
+      <form id="form-matricula">
+        <select name="alunoId" required></select>
+        <select name="disciplinaCodigo" required></select>
+        <button>Matricular</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>4. Lançar nota</h2>
+      <form id="form-nota">
+        <select name="alunoId" required></select>
+        <select name="disciplinaCodigo" required></select>
+        <input name="valor" type="number" min="0" max="10" step="0.1" placeholder="Nota (0 a 10)" required>
+        <button>Lançar nota</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>5. Boletim</h2>
+      <form id="form-boletim">
+        <select name="alunoId" required></select>
+        <button>Consultar boletim</button>
+      </form>
+      <div id="boletim"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

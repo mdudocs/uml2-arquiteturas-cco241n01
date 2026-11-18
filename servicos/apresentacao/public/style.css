@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; margin: 0; background: #f4f6fa; color: #1c2430; }
+header { background: #1f3a5f; color: #fff; padding: 1.2rem 2rem; }
+header h1 { margin: 0; font-size: 1.5rem; }
+header p { margin: .25rem 0 0; opacity: .8; font-size: .9rem; }
+main { max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; display: grid; gap: 1rem; }
+section { background: #fff; border-radius: 8px; padding: 1rem 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+h2 { margin: 0 0 .75rem; font-size: 1.1rem; color: #1f3a5f; }
+form { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .75rem; }
+input, select { padding: .5rem; border: 1px solid #b8c2d0; border-radius: 4px; font: inherit; flex: 1 1 140px; }
+button { padding: .5rem 1rem; border: 0; border-radius: 4px; background: #2b6cb0; color: #fff; font: inherit; cursor: pointer; }
+button:hover { background: #1f528a; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid #e1e6ee; }
+th { color: #4a5568; }
+#aviso { position: sticky; top: 0; z-index: 1; padding: .75rem 2rem; font-weight: 600; }
+#aviso.ok { background: #c6f6d5; color: #22543d; }
+#aviso.erro { background: #fed7d7; color: #822727; }
+.aprovado { color: #22543d; font-weight: 600; }
+.reprovado { color: #822727; font-weight: 600; }
