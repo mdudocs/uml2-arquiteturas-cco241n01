@@ -1,0 +1,42 @@
+# Sistema acadêmico em 3 camadas: apresentação -> negócio -> dados
+# Sobe tudo com: docker compose up --build
+#
+# Só a apresentação publica porta para o host. Negócio e dados ficam
+# acessíveis apenas pela rede interna do compose (RNF01).
+
+services:
+  dados:
+    build: ./servicos/dados
+    volumes:
+      - dados-db:/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3002/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  negocio:
+    build: ./servicos/negocio
+    environment:
+      DADOS_URL: http://dados:3002
+    depends_on:
+      dados:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3001/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  apresentacao:
+    build: ./servicos/apresentacao
+    environment:
+      NEGOCIO_URL: http://negocio:3001
+    ports:
+      - "3000:3000"
+    depends_on:
+      negocio:
+        condition: service_healthy
+
+volumes:
+  dados-db:
