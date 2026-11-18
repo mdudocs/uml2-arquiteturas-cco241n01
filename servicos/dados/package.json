@@ -1,0 +1,9 @@
+{
+  "name": "servico-dados",
+  "version": "1.0.0",
+  "description": "Camada de dados do sistema acadêmico (SQLite + API HTTP)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js"
+  }
+}
